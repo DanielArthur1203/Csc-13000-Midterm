@@ -189,6 +189,17 @@ int main(){
         ANDOW HATEV ERWEK NOWHO WTOOR DERIT TOPER FORMI TCANF OLLOW ANALY SISBU TITHA SNOPO WEROF ANTIC IPATI 
         NGANY ANALY TICAL RELAT IONSO RTRUT HSITS PROVI NCEIS TOASS ISTUS INMAK INGAV AILAB LEWHA TWEAR EALRE ADYAC 
         QUAIN TEDWI THTHE ANALY TICAL ENGIN EWEAV ESALG EBRAI CPATT ERNSJ USTAS THEJA CQUAR DLOOM WEAVE SFLOW ERSAN DLEAV ES*/
+
+        cout << "-----------------------------" << endl;
+        cout << "The context/meaning of the text is:" << endl;
+        cout << 
+        "The analytical engine was a mechincal designed by Charles Baggage in the 1830-40s. "
+        "It is\nconsidered the first ever general purpose computer. It used gears and levers to operate "
+        "\nand could be programmed using punch cards. " 
+        "It's design was also insired by the jacquard\nloom which used also punch cards. This allowed the loom to create complex patterns likes\nflowers or leaves. "
+        "This is a quote by Ada Lovelace, who's called the first ever computer\nprogrammer. She worked with Baggage and wrote notes about his engine. "
+        "She knew that\ncomputers followed instructions but couldn't think for themselves. "
+        "Computers helped up\nwith things we already knew, not things we didn't. ";
     }
 
     //
