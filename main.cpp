@@ -3,6 +3,7 @@
 #include <cctype>
 #include <ctime>
 #include <string>
+#include <unistd.h>
 
 //It is worth noting that Friedman's Test and the Kasiski Examination were used but approximated the key size
 //to be 5 when it is in fact size 8
@@ -134,6 +135,8 @@ int main(){
     }
     else{
         cout << "Brute Force Through All Possible Keys:\n";
+
+        vector<double> occurrences(26, 0);
         
         int counter = 0; //to skip the spaces in encrypted text
 
@@ -146,6 +149,8 @@ int main(){
                     char c = ENCRYPTEDTEXT.at(j) - 65; //Convert to 0-25
                     c = ((c - (keys.at(i).at(k) - 97) + 26) % 26) + 65; //Get the decrypted letter
 
+                    occurrences.at(c - 65)++;
+                    
                     counter++;
                     cout << c; //Print the decrypted letter
                     
@@ -154,11 +159,25 @@ int main(){
                     cout << " "; //Print the space
                 }
             }
-            
-            cout << endl << endl;
-        }
 
-        vector<double> occurrences(26, 0);
+            cout << endl;
+
+            cout << "Frequency Analysis of Decrypted Text: \n";
+
+            for(int i = 0; i < occurrences.size(); i++){
+                char a = i + 65;
+                cout << a << " : " << (occurrences.at(i) / ENCRYPTEDTEXT.size()) * 100 << "%\n";
+            }
+
+            for(int i = 0; i < occurrences.size(); i++){
+                occurrences.at(i) = 0;
+            }
+
+            usleep(500000);
+            
+            cout << endl;
+        }
+        
         cout << "\nFrequency Analysis of Encrypted Text: \n";
 
         for(int i = 0; i < ENCRYPTEDTEXT.size(); i++){
