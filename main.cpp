@@ -5,6 +5,8 @@
 #include <string>
 #include <unistd.h>
 
+/* github page: https://github.com/DanielArthur1203/Csc-13000-Midterm */
+
 //It is worth noting that Friedman's Test and the Kasiski Examination were used but approximated the key size
 //to be 5 when it is in fact size 8
 using namespace std;
@@ -68,7 +70,7 @@ int main(){
 
         //swap every letter according to the index swapDistance spaces and symbols are ignored
         //One iteration for swapping letters in Hello with a shift of one is eHllo
-        for(int i = 0; i < text.size(); i++){
+        for(unsigned int i = 0; i < text.size(); i++){
             int shiftIndex = (i + swapDistance) % text.size();
             char temp = text.at(i);
 
@@ -79,7 +81,7 @@ int main(){
         }
 
         //one time pad part of the encryption since each shift is "random"
-        for(int i = 0; i < text.size(); i++){
+        for(unsigned int i = 0; i < text.size(); i++){
             //no point in getting a shift if it is not a letter
             if(!isalpha(text.at(i))){
                 answerText += text.at(i);
@@ -119,13 +121,13 @@ int main(){
                 }
 
                 if(seeOrNo == "Y"){
-                    for(int i = 0; i < letterShifts.size(); i++){
+                    for(unsigned int i = 0; i < letterShifts.size(); i++){
                         cout << letterShifts.at(i) << "\n";
                     }
                 }
             }
 
-            for(int i = 0; i < letterShifts.size(); i++){
+            for(unsigned int i = 0; i < letterShifts.size(); i++){
                 cout << letterShifts.at(i) << "\n";
             }
         }
@@ -164,12 +166,12 @@ int main(){
 
             cout << "Frequency Analysis of Decrypted Text: \n";
 
-            for(int i = 0; i < occurrences.size(); i++){
+            for(unsigned int i = 0; i < occurrences.size(); i++){
                 char a = i + 65;
                 cout << a << " : " << (occurrences.at(i) / ENCRYPTEDTEXT.size()) * 100 << "%\n";
             }
 
-            for(int i = 0; i < occurrences.size(); i++){
+            for(unsigned int i = 0; i < occurrences.size(); i++){
                 occurrences.at(i) = 0;
             }
 
@@ -180,14 +182,14 @@ int main(){
         
         cout << "\nFrequency Analysis of Encrypted Text: \n";
 
-        for(int i = 0; i < ENCRYPTEDTEXT.size(); i++){
+        for(unsigned int i = 0; i < ENCRYPTEDTEXT.size(); i++){
             char letter = ENCRYPTEDTEXT.at(i);
             if(isalpha(letter)){
                 occurrences.at(letter - 65)++;
             }
         }
 
-        for(int i = 0; i < occurrences.size(); i++){
+        for(unsigned int i = 0; i < occurrences.size(); i++){
             char a = i + 65;
             cout << a << " : " << (occurrences.at(i) / ENCRYPTEDTEXT.size()) * 100 << "%\n";
         }
@@ -222,8 +224,6 @@ int main(){
         "She knew that\ncomputers followed instructions but couldn't think for themselves. "
         "Computers helped up\nwith things we already knew, not things we didn't. ";
     }
-
-    //
 
     return 0;
 }
