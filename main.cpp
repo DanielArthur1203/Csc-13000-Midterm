@@ -4,11 +4,13 @@
 #include <ctime>
 #include <string>
 
+//It is worth noting that Friedman's Test and the Kasiski Examination were used but approximated the key size
+//to be 5 when it is in fact size 8
 using namespace std;
 
 int main(){
     unsigned long previousRandom = 1;
-    //time_t is the type that time returns. Got that from the offical C++ Documentation https://en.cppreference.com/w/cpp/chrono/c/time.html
+    //time_t is the type that time returns. Got that from the official C++ Documentation https://en.cppreference.com/w/cpp/chrono/c/time.html
     const time_t CURRENTTIME = time(0);
 
     const string ENCRYPTEDTEXT = "TJXUN LWWTK VULPY EIPXB ADYMP TXNEY DGOPL "
@@ -138,7 +140,7 @@ int main(){
         for (unsigned int i = 0; i < keys.size(); i++){ //Iterate though the keys
             cout << keys.at(i) << ": ";
             //key is actually
-            for (unsigned int j = 0; j < ENCRYPTEDTEXT.length(); j++){ //Iterate throught the encrypted text
+            for (unsigned int j = 0; j < ENCRYPTEDTEXT.length(); j++){ //Iterate through the encrypted text
                 if (isalpha(ENCRYPTEDTEXT.at(j))) { //Check if it is a letter
                     int k = counter % keys.at(i).length(); //Get the shift letter
                     char c = ENCRYPTEDTEXT.at(j) - 65; //Convert to 0-25
